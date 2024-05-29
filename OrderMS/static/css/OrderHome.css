@@ -1,0 +1,95 @@
+a {
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+/* 卡片 Hover 点击效果 */
+
+.FoodCard {
+    z-index: 1;
+    font-size: inherit;
+    overflow: hidden;
+    transition: color 0.2s ease-in-out;
+     height: 100%; /* 确保卡片占满整个容器 */
+}
+
+.card-img-wrapper {
+    height: 200px; /* 设置一个固定的高度值 */
+    width: 100%; /* 图片宽度与容器宽度一致 */
+    overflow: hidden; /* 保留这个属性以隐藏超出容器的图片部分 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img-top {
+    width: 100%; /* 图片宽度与容器宽度一致 */
+    height: 100%; /* 图片高度与容器高度一致 */
+    object-fit: cover; /* 保持图片的宽高比，同时填充整个容器 */
+    display: block;
+}
+
+
+/* 为了让卡片内容（如按钮）和图片之间有明显的分隔，可以给 .card-body 添加一些内边距或外边距 */
+.card-body {
+    padding-top: 1rem; /* 根据需要调整内边距 */
+}
+
+/* 保留半透明背景或其他样式 */
+.card {
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明背景 */
+}
+
+.FoodCard::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: #dae3ff;
+    transform-origin: center;
+    transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.FoodCard:hover {
+    color: rgb(82, 94, 255);
+}
+
+.FoodCard:hover::before {
+    transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+}
+
+
+#table-option-sheet {
+    display: none;
+}
+
+#table-option-sheet .card {
+    margin-left: 30%;
+    background-color: #f8f9fa;
+    width: 350px;
+    bottom: 90px;
+}
+
+/* 底部导航栏 */
+.BottomNavBar {
+    height: 80px;
+    background-color: #f8f9fa;
+}
+
+
+.DeleteItemBtn {
+    border-radius: 50%;
+}
+
+.totalPrice {
+    /* color: #f32f2f; */
+}
